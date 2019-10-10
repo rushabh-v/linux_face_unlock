@@ -40,7 +40,7 @@ def getFaces(training=False, ):
         if training:
             if len(imgs)==1:
                 if saved==False:
-                    cv2.imwrite("./images/Train/"+str(k)+".jpeg", imgs[0])
+                    cv2.imwrite("./images/root/"+str(k)+".jpeg", imgs[0])
                     saved=True
                     k+=1        
         else:
