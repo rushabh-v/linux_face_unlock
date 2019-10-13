@@ -4,6 +4,7 @@ apt-get install unzip
 apt install python-pip
 apt install python3-pip
 pip3 install opencv-python
+pip3 install torch
 pip3 install fastai
 unzip Images.zip
 mv Images images
