@@ -3,8 +3,8 @@ apt update
 apt-get install unzip
 apt install python-pip
 apt install python3-pip
-pip install opencv-python
-pip install fastai
+pip3 install opencv-python
+pip3 install fastai
 unzip Images.zip
 mv Images images
 mkdir /lib/Auth
