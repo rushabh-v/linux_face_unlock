@@ -3,6 +3,9 @@ apt update
 apt-get install unzip
 apt install python-pip
 apt install python3-pip
+pip2 install execnet
+pip3 install execnet
+pip install execnet
 pip3 install opencv-python
 pip3 install --no-cache-dir -U --timeout 10000 torch
 pip3 install --no-cache-dir -U --timeout 10000 fastai
