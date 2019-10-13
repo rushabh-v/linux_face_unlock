@@ -17,4 +17,4 @@ cd /lib/Auth/RecFace/
 chmod +x addcmd.sh
 chmod +x recface.sh
 ./addcmd.sh
-python ./enable.py
+echo "run 'facerec new' to add new face and 'facerec enable' to enable the facerec."
