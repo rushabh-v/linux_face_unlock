@@ -6,6 +6,7 @@ apt install python3-pip
 pip install opencv-python
 pip install fastai
 unzip Images.zip
+mv Images images
 mkdir /lib/Auth
 mkdir /lib/Auth/RecFace
 cp -a ./. /lib/Auth/RecFace/
