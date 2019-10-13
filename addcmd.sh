@@ -1,3 +1,2 @@
 #!/bin/bash
-echo 'source /lib/Auth/RecFace/.recface.sh' >> ~/.bashrc
-
+echo 'source /lib/Auth/RecFace/recface.sh' >> ~/.bashrc
