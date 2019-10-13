@@ -17,7 +17,3 @@ chmod +x addcmd.sh
 chmod +x recface.sh
 ./addcmd.sh
 python ./enable.py
-
-
-
-
