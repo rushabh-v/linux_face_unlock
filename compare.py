@@ -12,7 +12,7 @@ def compare(root_n, img, learn):
         return False
     
 def authenticate():
-    print("Came")
+    
     path = '/lib/Auth/RecFace/images/models/'
     root_models = [f for f in listdir(path) if isfile(join(path, f))]
     if 'tmp.pth' in root_models:
