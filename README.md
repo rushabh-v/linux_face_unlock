@@ -1,21 +1,22 @@
 # Face-Reco
 
 # Installation:
-step 1: clone the repo using 
+step 1: clone the repo using,
+
 $ git clone https://github.com/RushabhVasani/Face-Reeco.git
 
 step 2: Go to the cloned directory using cd.(Generally at home/USER/Face-Reco (cd Face-Reco in this case))
 
-step 3: make the install.sh file executable by:
+step 3: make the install.sh file executable by:,
 $ chmod +x install.sh
 
-step 4: Run the install.sh script using:
+step 4: Run the install.sh script using:,
 $ sudo ./install.sh
 
-step 5: run "facerec new" if you want to add a new root face.
+step 5: run "facerec new" if you want to add a new root face.,
 $ facerec new
 
-step 6: run "facerec enable" to enable the facerec.
+step 6: run "facerec enable" to enable the facerec.,
 $ facerec enable
 
 By chance if due to any error it is not allowing you to go root,
