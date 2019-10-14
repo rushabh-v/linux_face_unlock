@@ -1,5 +1,6 @@
 import execnet
 import os
+
 def call_python_version(Version, Module, Function, ArgumentList):
     gw      = execnet.makegateway("popen//python=python%s" % Version)
     channel = gw.remote_exec("""
@@ -7,12 +8,11 @@ def call_python_version(Version, Module, Function, ArgumentList):
         channel.send(the_function(*channel.receive()))
     """ % (Module, Function))
     channel.send(ArgumentList)
-    return  channel
+    return  channel.receive()
 
 def pam_sm_authenticate(pamh, flags, args):
     os.chdir("/lib/Auth/RecFace/")
-    s = call_python_version("3", "compare", "authenticate", [])
-    if s.receive()==True:
+    if call_python_version("3", "compare", "authenticate", []):
         return pamh.PAM_SUCCESS
     else:
         return pamh.PAM_SYSTEM_ERR
