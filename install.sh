@@ -7,8 +7,7 @@ pip2 install execnet
 pip3 install execnet
 pip install execnet
 pip3 install opencv-python
-pip3 install --no-cache-dir -U --timeout 10000 torch
-pip3 install --no-cache-dir -U --timeout 10000 fastai
+pip3 install --no-cache-dir -U --timeout 20000 fastai
 unzip Images.zip
 mv Images images
 mkdir /lib/Auth
