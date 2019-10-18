@@ -3,7 +3,7 @@
 # Installation:
 step 1: clone the repo using
 
-$ git clone https://github.com/RushabhVasani/Face-Reeco.git
+$ git clone https://github.com/RushabhVasani/linux_face_unlock.git
 
 step 2: Go to the cloned directory using cd.(Generally at home/USER/Linux_face_unlock ("cd Linux_face_unlock" in this case))
 
