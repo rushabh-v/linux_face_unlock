@@ -1,11 +1,11 @@
-# Face-Reco
+# Facerec 
 
 # Installation:
 step 1: clone the repo using
 
 $ git clone https://github.com/RushabhVasani/Face-Reeco.git
 
-step 2: Go to the cloned directory using cd.(Generally at home/USER/Face-Reco (cd Face-Reco in this case))
+step 2: Go to the cloned directory using cd.(Generally at home/USER/Linux_face_unlock ("cd Linux_face_unlock" in this case))
 
 step 3: make the install.sh file executable by:
 $ chmod +x install.sh
