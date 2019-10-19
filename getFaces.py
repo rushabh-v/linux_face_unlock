@@ -2,10 +2,8 @@
 # coding: utf-8
 
 # In[8]:
-
-
-import cv2
 import sys
+import cv2
 import os.path
 import time
 import os
@@ -16,7 +14,6 @@ for i in sys.path:
         break
 
 def getFaces(training=False):
-    
     saved=False
     start_time = time.time()
     cap = cv2.VideoCapture(0)
@@ -25,6 +22,7 @@ def getFaces(training=False):
     
     while ti<50:
         if ti>k and ti<k+1:
+            k = k+1
             saved = False
             
         ti = time.time()-start_time
@@ -42,8 +40,7 @@ def getFaces(training=False):
             if len(imgs)==1:
                 if saved==False:
                     cv2.imwrite("/lib/Auth/RecFace/images/Train/"+str(k)+".jpeg", imgs[0])
-                    saved=True
-                    k+=1        
+                    saved=True       
         else:
             if len(imgs)!=0:
                 cap.release()
@@ -57,10 +54,9 @@ def getFaces(training=False):
         if cv2.waitKey(1) & 0xFF == ord('q'):
             cap.release()
             cv2.destroyAllWindows()
-            return imgs            
+            return imgs          
             
     cap.release()
     cv2.destroyAllWindows()
     return imgs
-
 
