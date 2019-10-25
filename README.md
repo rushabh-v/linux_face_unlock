@@ -1,4 +1,4 @@
-# Facerec 
+# linux_face_unlock 
 
 # Installation:
 step 1: clone the repo using
