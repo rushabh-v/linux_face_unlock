@@ -1,4 +1,5 @@
-# linux_face_unlock 
+
+# facerec
 
 # Installation:
 step 1: clone the repo using
