@@ -37,7 +37,7 @@ step 6: run "facerec enable" to enable the facerec.
 
 
 
-By chance if due to any error it is not allowing you to go root, Go to recovery mode as root and run,
+By chance if due to any error it is not allowing you to go root then don't penic just Go to recovery mode as root and run,
 
 >apt-get --reinstall install libpam-runtime libpam-modules
 
