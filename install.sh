@@ -1,11 +1,13 @@
 #!/bin/bash
+apt-get update
 apt-get install unzip
 apt install python-pip
 apt install python3-pip
-sudo -H pip3 install execnet
-sudo -H pip install execnet
-sudo -H pip3 install opencv-python
-sudo -H pip3 install --no-cache-dir -U --timeout 20000 fastai
+pip2 install execnet
+pip3 install execnet
+pip install execnet
+pip3 install opencv-python
+pip3 install --no-cache-dir -U --timeout 20000 fastai
 unzip Images.zip
 mv Images images
 mkdir /lib/Auth
