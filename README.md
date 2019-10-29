@@ -1,7 +1,7 @@
 
-# Facerec
+### Facerec
 
-# Installation:
+Installation:
 step 1: clone the repo using
 
 ->git clone https://github.com/RushabhVasani/linux_face_unlock.git
