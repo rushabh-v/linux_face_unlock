@@ -4,8 +4,8 @@
 Installation:
 step 1: clone the repo using
 
-->git clone https://github.com/RushabhVasani/linux_face_unlock.git
-
+>git clone https://github.com/RushabhVasani/linux_face_unlock.git
+>This will clone.
 
 
 step 2: Go to the cloned directory using cd.
