@@ -1,5 +1,5 @@
 
-### Facerec
+# Facerec
 
 Installation:
 step 1: clone the repo using
