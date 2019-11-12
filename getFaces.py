@@ -22,7 +22,6 @@ def getFaces(training=False):
     
     while ti<50:
         if ti>k and ti<k+1:
-            k = k+1
             saved = False
             
         ti = time.time()-start_time
@@ -39,6 +38,7 @@ def getFaces(training=False):
         if training:
             if len(imgs)==1:
                 if saved==False:
+                    k+=1
                     cv2.imwrite("/lib/Auth/RecFace/images/Train/"+str(k)+".jpeg", imgs[0])
                     saved=True       
         else:
