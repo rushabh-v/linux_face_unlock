@@ -1,6 +1,6 @@
 import getFaces
-import cv2
-from fastai.vision import *
+from cv2 import resize, imwrite, INTER_AREA
+from fastai.vision import ImageDataBunch, cnn_learner, imagenet_stats, models, open_image
 from os import listdir
 from os.path import isfile, join
 
@@ -33,8 +33,8 @@ def authenticate():
         return False
     
     for img in imgs:
-        img = cv2.resize(img, (224,224), interpolation = cv2.INTER_AREA)
-        cv2.imwrite('temp.jpeg', img)
+        img = resize(img, (224,224), interpolation = INTER_AREA)
+        imwrite('temp.jpeg', img)
         img = open_image('temp.jpeg')
         for mod in root_models:
             if compare(mod.split('.')[0], img, learn):
