@@ -14,16 +14,21 @@ def pam_sm_authenticate(pamh, flags, args):
     print "facerec running.."
     os.chdir("/lib/Auth/RecFace/")
     if call_python_version("3", "compare", "authenticate", []):
+        os.chdir("/")
         return pamh.PAM_SUCCESS
     else:
+        os.chdir("/")
         return pamh.PAM_SYSTEM_ERR
 
 
 def pam_sm_open_session(pamh, flags, args):
     print "facerec running.."
+    os.chdir("/lib/Auth/RecFace/")
     if call_python_version("3", "compare", "authenticate", []):
+        os.chdir("/")
         return pamh.PAM_SUCCESS
     else:
+        os.chdir("/")
         return pamh.PAM_SYSTEM_ERR
 
 def pam_sm_close_session(pamh, flags, argv):
