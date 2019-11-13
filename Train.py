@@ -1,9 +1,4 @@
-# coding: utf-8
-
-# In[ ]:
-
-from fastai.vision import *
-import cv2
+from fastai.vision import ImageDataBunch, get_transforms, imagenet_stats, create_cnn, models
 from os import listdir
 from os.path import isfile, join
 
