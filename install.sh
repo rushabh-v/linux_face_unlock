@@ -14,6 +14,8 @@ cp -a ./. /lib/Auth/RecFace/
 cp Recface /usr/share/pam-configs/
 cp pam_python.so /lib/x86_64-linux-gnu/security/
 cd /lib/Auth/RecFace/
+sudo rm -r Images
+sudo rm -r Images.zip
 sudo chmod -R a+rw images/
 chmod +x addcmd.sh
 chmod +x recface.sh
