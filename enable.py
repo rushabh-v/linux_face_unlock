@@ -4,15 +4,15 @@
 # In[1]:
 
 
-import os
+from os import system
 print("Enter 'y' id you want to add your face now else press 'n':")
 s = input()
 if s=='y':
-    os.system("python ./add_new.py")
+    system("python ./add_new.py")
     print("Enter 'y' id you want to enable the face unlock now else press 'n'")
     s = input()
     if s=='y':
-        os.system("pam-auth-update")
+        system("pam-auth-update")
     else:
         pass
 else:
