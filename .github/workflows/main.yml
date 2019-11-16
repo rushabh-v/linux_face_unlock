@@ -11,5 +11,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Run a multi-line script
       run: |
-        chmod +x ../../install.sh
-        sudo ../../install.sh
+        pwd
+        ls
+        #chmod +x ../../install.sh
+        #sudo ../../install.sh
