@@ -20,5 +20,5 @@ sudo chmod -R a+rw images/
 chmod +x addcmd.sh
 chmod +x recface.sh
 ./addcmd.sh
-python enable.py
+tset
 echo "run 'facerec new' to add new face and 'facerec enable' to enable the facerec."
