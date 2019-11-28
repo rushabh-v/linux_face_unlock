@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run a multi-line script
+    - name: Installaion checks
       run: |
         chmod +x install.sh
         sudo ./install.sh
