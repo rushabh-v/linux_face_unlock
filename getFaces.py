@@ -1,7 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[8]:
 from sys import path as syspath
 from cv2 import CascadeClassifier, VideoCapture, imshow, imwrite, cvtColor, COLOR_BGR2GRAY, destroyAllWindows, waitKey
 import os.path
@@ -13,14 +9,18 @@ for i in syspath:
         break
 
 def getFaces(training=False):
+    print("")
+    print("There shold be only one person in frount of the camera while it takes the pictures to train the model on.")
+    print("")
+    print("It will take pictures for next 50 seconds press ENTER when ready: ")
+    input()
     saved=False
     start_time = time.time()
     cap = VideoCapture(0)
     ti = time.time()-start_time
     k=0
-    
     while ti<50:
-        if ti>k and ti<k+1:
+        if ti>k and saved:
             saved = False
             
         ti = time.time()-start_time
