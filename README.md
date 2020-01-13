@@ -6,9 +6,9 @@ step 1: clone the repo using
 
 `git clone https://github.com/rushabh-v/linux_face_unlock.git`
 
-step 2: Go to the cloned directory using cd.
-(Generally at home/USER/Linux_face_unlock)
-cd Linux_face_unlock
+step 2: Go to the cloned directory using cd.(Generally at home/USER/Linux_face_unlock)
+
+`cd Linux_face_unlock`
 
 
 
