@@ -2,11 +2,12 @@
 # Facerec
 
 Installation:
-step 1: clone the repo using
+
+step 1: clone the repo.
 
 `git clone https://github.com/rushabh-v/linux_face_unlock.git`
 
-
+ 
 step 2: Go to the cloned directory using cd.(Generally at home/USER/Linux_face_unlock)
 
 `cd Linux_face_unlock`
@@ -19,23 +20,23 @@ step 3: make the install.sh file executable by:
 
 step 4: Run the install.sh script using:
 
->sudo ./install.sh
+`sudo ./install.sh`
 
 
 
 step 5: run "facerec new" if you want to add a new root face.
 
->facerec new
+`facerec new`
 
 
 
 step 6: run "facerec enable" to enable the facerec.
 
->facerec enable
+`facerec enable`
 
 
 
-By chance if due to any error it is not allowing you to go root then don't penic just Go to recovery mode as root and run,
+By chance due to any error if it is not allowing you to go root then don't penic just Go to recovery mode as root and run,
 
->apt-get --reinstall install libpam-runtime libpam-modules
+`apt-get --reinstall install libpam-runtime libpam-modules`
 
