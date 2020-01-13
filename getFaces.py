@@ -35,10 +35,10 @@ def getFaces(training=False):
         
             
         gray = cvtColor(img, COLOR_BGR2GRAY) 
-        faces = face_detector.detectMultiScale(img, 1.3, 5)
+        faces = face_detector.detectMultiScale(gray, 1.3, 5)
         imgs = []
         for (x,y,w,h) in faces:
-            imgs.append(img[y:y+h,x:x+w])
+            imgs.append(gray[y:y+h,x:x+w])
         if training:
             if len(imgs)==1:
                 if saved==False:
