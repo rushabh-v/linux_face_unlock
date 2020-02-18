@@ -6,7 +6,7 @@ sudo -H pip3 install execnet
 sudo -H pip install execnet
 sudo -H pip3 install opencv-python
 sudo -H pip3 install --no-cache-dir -U --timeout 20000 fastai
-unzip images.zip -d images
+unzip images.zip
 mkdir /lib/Auth
 mkdir /lib/Auth/RecFace
 cp -a ./. /lib/Auth/RecFace/
