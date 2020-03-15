@@ -26,7 +26,7 @@
 
      * `facerec enable`
 
-#### By chance due to any error if it is not allowing you to go root then don't penic just Go to recovery mode as root and run,
+#### By chance due to any error if it is not allowing you to go root then don't panic just Go to recovery mode as root and run,
 
   * `apt-get --reinstall install libpam-runtime libpam-modules`
 
