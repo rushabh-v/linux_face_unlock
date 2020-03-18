@@ -17,7 +17,7 @@ sudo rm -r images.zip
 mkdir images/models
 sudo chmod -R a+rw images/
 chmod +x addcmd.sh recface.sh
-chmod -w addcmd.sh recface.sh getFaces.py enable.py install.sh Train.py add_new.py compare.py pam_ptn.py Recface images/models/
+chmod -w addcmd.sh recface.sh getFaces.py enable.py install.sh Train.py add_new.py compare.py pam_ptn.py Recface
 ./addcmd.sh
 . ~/.bashrc
 echo "run 'facerec new' to add new face and 'facerec enable' to enable the facerec."
