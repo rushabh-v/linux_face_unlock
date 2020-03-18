@@ -1,6 +1,8 @@
 
 # Facerec
 
+A blog on How I built this project can be found [here](https://medium.com/analytics-vidhya/how-i-built-face-unlock-for-ubuntu-linux-a2b769d1fbc1).
+
 ### Installation steps:
 1. clone the repo.
 
