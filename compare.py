@@ -26,7 +26,7 @@ def authenticate():
     
     
     data.normalize(imagenet_stats)
-    learn = cnn_learner(data, models.vgg16_bn)
+    learn = cnn_learner(data, models.resnet34)
     
     imgs = getFaces.getFaces()
     if len(imgs)==0:

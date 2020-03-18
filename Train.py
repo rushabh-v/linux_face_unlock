@@ -35,11 +35,11 @@ class Training():
         data.normalize(imagenet_stats)
         print("Classes: ", data.c)
         
-        learn = create_cnn(data, models.vgg16_bn, path = "/lib/Auth/RecFace/images/")
+        learn = create_cnn(data, models.resnet34, path = "/lib/Auth/RecFace/images/")
         
-        learn.fit_one_cycle(4, 8e-3)
+        learn.fit_one_cycle(8, 3e-3, wd=1e-6)
         learn.unfreeze()
-        learn.fit_one_cycle(4, 6e-5)
+        learn.fit_one_cycle(4, 6e-5, wd=1e-6)
         learn.fit_one_cycle(4, 1e-6)
         learn.save('root-'+str(a))
 
