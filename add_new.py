@@ -1,6 +1,4 @@
-import Train
 import getFaces
-getFaces.getFaces(training=True)
-T = Train.Training()
-T.train()
 
+if __name__ == '__main__':
+    getFaces.getFaces(training=True)

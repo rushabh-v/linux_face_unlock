@@ -1,42 +1,27 @@
 import getFaces
-from cv2 import resize, imwrite, INTER_AREA
-from fastai.vision import ImageDataBunch, cnn_learner, imagenet_stats, models, open_image
 from os import listdir
 from os.path import isfile, join
+from face_recognition import compare_faces
+import numpy as np
 
-def compare(root_n, img, learn):
-    learn.load(root_n)
-    if str(learn.predict(img)[0])=="Train":
-        return True
-    else:
-        return False
-    
+
+def load_npy(file):
+    return list(np.load(file))
+
 def authenticate():
     
-    path = '/lib/Auth/RecFace/images/models/'
-    root_models = [f for f in listdir(path) if isfile(join(path, f))]
-    if 'tmp.pth' in root_models:
-        root_models.remove('tmp.pth')
-        
-    classes = ["Test", "Train"]
-    data = ImageDataBunch.single_from_classes('/lib/Auth/RecFace/images/', 
-                                               classes, 
-                                               ds_tfms=None, 
-                                               size = 224)
-    
-    
-    data.normalize(imagenet_stats)
-    learn = cnn_learner(data, models.resnet34)
-    
-    imgs = getFaces.getFaces()
-    if len(imgs)==0:
+    path = '/lib/Auth/RecFace/roots/'
+    roots = [(path+f) for f in listdir(path) if isfile(join(path, f))] 
+    if not roots:
         return False
-    
-    for img in imgs:
-        img = resize(img, (224,224), interpolation = INTER_AREA)
-        imwrite('temp.jpeg', img)
-        img = open_image('temp.jpeg')
-        for mod in root_models:
-            if compare(mod.split('.')[0], img, learn):
-                return True
+    roots = list(map(load_npy, roots))
+    face_codes = getFaces.getFaces()
+
+    if not face_codes:
+        return False
+
+    for code in face_codes:
+        matches = np.array(compare_faces(roots, code))
+        if matches.any():
+            return True
     return False

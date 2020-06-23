@@ -1,66 +1,72 @@
-#!/usr/bin/env python
-# coding: utf-8
+from os import listdir, system
+from os.path import isfile, join
 
-# In[8]:
-from sys import path as syspath
-from cv2 import CascadeClassifier, VideoCapture, imshow, imwrite, cvtColor, COLOR_BGR2GRAY, destroyAllWindows, waitKey
-import os.path
-import time
+import numpy as np
+from face_recognition import face_encodings, face_locations
 
-for i in syspath:
-    if os.path.isfile(i+"/cv2/data/haarcascade_frontalface_default.xml"):
-        face_detector = CascadeClassifier(i+'/cv2/data/haarcascade_frontalface_default.xml') 
-        break
+from cv2 import ( 
+    destroyAllWindows,
+    imshow, 
+    resize,
+    VideoCapture,
+    waitKey,
+)
 
 def getFaces(training=False):
-    if(training):
-        print("")
-        print("There shold be only one person in frount of the camera while it takes the pictures to train the model on.")
-        print("")
-        print("It will take pictures for next 50 seconds press ENTER when ready: ")
+    
+    path = '/lib/Auth/RecFace/roots/'
+    if training:
+        system(f"sudo chattr -R -i {path}")
+        system(f"sudo chmod -R ugo+rw {path}")
+        print("There shold be only one person in frount of the camera!")
+        print("It will only save the model if there is exactly one face.\n Press [ENTER] to proceed: ")
         input()
     saved=False
-    start_time = time.time()
     cap = VideoCapture(0)
-    ti = time.time()-start_time
-    k=0
-    while ti<50:
-        if ti>k and saved:
-            saved = False
-            
-        ti = time.time()-start_time
-        rat, img = cap.read()
-        if training:
-            imshow("Try to change angle and distance of your face from camera.",img)
+    loop_count = 0
+    while not saved:
+        loop_count += 1
+        _, img = cap.read()
         
-            
-        gray = cvtColor(img, COLOR_BGR2GRAY) 
-        faces = face_detector.detectMultiScale(gray, 1.3, 5)
-        imgs = []
-        for (x,y,w,h) in faces:
-            imgs.append(gray[y:y+h,x:x+w])
-        if training:
-            if len(imgs)==1:
-                if saved==False:
-                    k+=1
-                    imwrite("/lib/Auth/RecFace/images/Train/"+str(k)+".jpeg", imgs[0])
-                    saved=True       
+        small_frame = resize(img, (0, 0), fx=0.25, fy=0.25)
+        rgb_small_frame = small_frame[:, :, ::-1]
+
+        face_locs = face_locations(rgb_small_frame)
+        face_code = face_encodings(rgb_small_frame, face_locs)
+        
+        if len(face_locs) == 1:
+            if not training:
+                return face_code
+            try:
+                root_models = [f for f in listdir(path) if isfile(join(path, f))]
+                a = len(root_models)
+            except:
+                a = 0
+            face_code = np.asarray(face_code)
+            np.save(f"{path}root-{a}.npy", face_code)
+            system(f"sudo chmod -R ugo-w {path}")
+            system(f"sudo chattr -R +i {path}")
+            saved = True
+
         else:
-            if len(imgs)!=0:
+            if training:
+                imshow("Image", img)
+
+            if len(face_code) > 1:
+                if not training:
+                    return face_code
                 cap.release()
                 destroyAllWindows()
-                return imgs
-            
+                raise Exception("More than one faces found!")
             else:
-                if k==50:
+                if loop_count > 200:
+                    cap.release()
+                    destroyAllWindows()
                     raise Exception("No faces detected.")
         
         if waitKey(1) & 0xFF == ord('q'):
             cap.release()
-            destroyAllWindows()
-            return imgs          
+            destroyAllWindows()        
             
     cap.release()
     destroyAllWindows()
-    return imgs
-
