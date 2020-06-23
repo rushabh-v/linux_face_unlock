@@ -6,9 +6,5 @@ if __name__ == '__main__':
     system("./requirements.sh")
     system("sudo -H ./requirements.sh")
     system("sudo ./install.sh")
+    system("sudo python ./comm_auth_orig.py")
     print("run 'facerec new' to add new face and\n'facerec enable' to enable the facerec.")
-    f = open("/etc/pam.d/polkit-1", "r")
-    text = f.read()
-    if "common-auth" in text:
-        text.replace("common-auth", "common-auth-orig")
-    
