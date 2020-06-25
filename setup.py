@@ -3,8 +3,8 @@ from os.path import isfile, join
 
 if __name__ == '__main__':
     print("Installing the dependencies")
-    system("sudo apt install python-pip")
-    system("sudo apt install python3-pip")
+    system("sudo apt-get install python-pip")
+    system("sudo apt-get install python3-pip")
     system("sudo apt-get install libatlas-base-dev")
     system("sudo chmod +x requirements.sh")
     system("./requirements.sh")
