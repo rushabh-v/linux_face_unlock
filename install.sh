@@ -1,12 +1,13 @@
 #!/bin/bash
 mkdir /lib/Auth
-mkdir /lib/Auth/RecFace
-mkdir /lib/Auth/RecFace/roots
-cp -a ./. /lib/Auth/RecFace/
+mkdir /lib/Auth/Facerec
+mkdir /lib/Auth/Facerec/roots
+cp -a ./utils/. /lib/Auth/Facerec/
+cp -a ./cli/. /lib/Auth/Facerec/
 cp pam_python.so /lib/x86_64-linux-gnu/security/
-cd /lib/Auth/RecFace/
-chmod +x addcmd.sh recface.sh
+cd /lib/Auth/Facerec/
+chmod +x cli.sh cli_setup.sh
 chmod -w addcmd.sh recface.sh getFaces.py enable.py install.sh add_new.py compare.py pam_ptn.py Recface roots
 chattr +i addcmd.sh recface.sh getFaces.py enable.py install.sh add_new.py compare.py pam_ptn.py Recface roots
-./addcmd.sh
+./cli_setup.sh
 . ~/.bashrc

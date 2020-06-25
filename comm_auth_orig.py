@@ -1,3 +1,4 @@
+
 if __name__ == '__main__':
     f = open("/etc/pam.d/polkit-1", "r")
     text = f.read()

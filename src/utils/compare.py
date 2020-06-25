@@ -1,7 +1,7 @@
 import getFaces
 from os import listdir
 from os.path import isfile, join
-from face_recognition import compare_faces
+from face_recognition import face_distance
 import numpy as np
 
 
@@ -10,7 +10,7 @@ def load_npy(file):
 
 def authenticate():
     
-    path = '/lib/Auth/RecFace/roots/'
+    path = '/lib/Auth/Facerec/roots/'
     roots = [(path+f) for f in listdir(path) if isfile(join(path, f))] 
     if not roots:
         return False
@@ -21,7 +21,8 @@ def authenticate():
         return False
 
     for code in face_codes:
-        matches = np.array(compare_faces(roots, code))
+        distances = np.array(face_distance(roots, code))
+        matches = distances < 0.35
         if matches.any():
             return True
-    return False
+    raise Exception("facerec did not recognize and face! Please enter the password.")

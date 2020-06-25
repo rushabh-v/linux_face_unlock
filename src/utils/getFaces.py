@@ -14,7 +14,7 @@ from cv2 import (
 
 def getFaces(training=False):
     
-    path = '/lib/Auth/RecFace/roots/'
+    path = '/lib/Auth/Facerec/roots/'
     if training:
         system(f"sudo chattr -R -i {path}")
         system(f"sudo chmod -R ugo+rw {path}")
@@ -27,10 +27,9 @@ def getFaces(training=False):
     while not saved:
         loop_count += 1
         _, img = cap.read()
+        img = img[:, :, ::-1]
         
-        small_frame = resize(img, (0, 0), fx=0.25, fy=0.25)
-        rgb_small_frame = small_frame[:, :, ::-1]
-
+        rgb_small_frame = resize(img, (0, 0), fx=0.25, fy=0.25)
         face_locs = face_locations(rgb_small_frame)
         face_code = face_encodings(rgb_small_frame, face_locs)
         
@@ -42,7 +41,7 @@ def getFaces(training=False):
                 a = len(root_models)
             except:
                 a = 0
-            face_code = np.asarray(face_code)
+            face_code = np.asarray(face_code[0])
             np.save(f"{path}root-{a}.npy", face_code)
             system(f"sudo chmod -R ugo-w {path}")
             system(f"sudo chattr -R +i {path}")
@@ -57,12 +56,12 @@ def getFaces(training=False):
                     return face_code
                 cap.release()
                 destroyAllWindows()
-                raise Exception("More than one faces found!")
+                raise Exception("facerec found more than one faces!")
             else:
                 if loop_count > 200:
                     cap.release()
                     destroyAllWindows()
-                    raise Exception("No faces detected.")
+                    raise Exception("facerec couldn't detect any face!")
         
         if waitKey(1) & 0xFF == ord('q'):
             cap.release()
