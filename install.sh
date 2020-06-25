@@ -7,7 +7,7 @@ cp -a ./src/cli/. /lib/Auth/Facerec/
 cp pam_python.so /lib/x86_64-linux-gnu/security/
 cd /lib/Auth/Facerec/
 chmod +x cli.sh cli_setup.sh
-chmod -w addcmd.sh recface.sh getFaces.py enable.py install.sh add_new.py compare.py pam_ptn.py Recface roots
-chattr +i addcmd.sh recface.sh getFaces.py enable.py install.sh add_new.py compare.py pam_ptn.py Recface roots
+chmod -w cli_setup.sh cli.sh getFaces.py add_new.py compare.py pam_ptn.py roots
+chattr +i cli_setup.sh cli.sh getFaces.py add_new.py compare.py pam_ptn.py roots
 ./cli_setup.sh
 . ~/.bashrc
