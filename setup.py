@@ -5,6 +5,7 @@ if __name__ == '__main__':
     system("sudo apt-get install python-pip")
     system("sudo apt-get install python3-pip")
     system("sudo apt-get install libatlas-base-dev")
+    system("sudo apt - get install build essential")
     system("sudo chmod +x requirements.sh")
     system("./requirements.sh")
     system("sudo -H ./requirements.sh")
