@@ -2,15 +2,9 @@ from os import listdir, system
 from os.path import isfile, join
 
 import numpy as np
+from cv2 import VideoCapture, destroyAllWindows, imshow, resize, waitKey
 from face_recognition import face_encodings, face_locations
 
-from cv2 import ( 
-    destroyAllWindows,
-    imshow, 
-    resize,
-    VideoCapture,
-    waitKey,
-)
 
 def getFaces(training=False):
     

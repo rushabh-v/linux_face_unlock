@@ -1,8 +1,10 @@
-import getFaces
 from os import listdir
 from os.path import isfile, join
-from face_recognition import face_distance
+
 import numpy as np
+from face_recognition import face_distance
+
+import getFaces
 
 
 def load_npy(file):

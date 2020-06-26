@@ -1,5 +1,7 @@
-import execnet
 import os
+
+import execnet
+
 
 def call_python_version(Version, Module, Function, ArgumentList):
     gw      = execnet.makegateway("popen//python=python%s" % Version)
