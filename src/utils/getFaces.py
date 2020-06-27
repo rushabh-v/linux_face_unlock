@@ -6,14 +6,16 @@ from cv2 import VideoCapture, destroyAllWindows, imshow, resize, waitKey
 from face_recognition import face_encodings, face_locations
 
 
-def getFaces(training=False):
-    
+def getFaces(training=False, model_n=0):
+
     path = '/lib/Auth/Facerec/roots/'
     if training:
-        system(f"sudo chattr -R -i {path}")
-        system(f"sudo chmod -R ugo+rw {path}")
-        print("There shold be only one person in frount of the camera!")
-        print("It will only save the model if there is exactly one face.\n Press [ENTER] to proceed: ")
+        if not model_n:
+            print("Facerec will store 10 different models of your face to master your face.")
+            print("Try to give a slightly different pose each time [Smiling, Normal, etc.]")
+        print(f"\nmodel: {model_n+1}")
+        print("\nThere shold be exactly one person in frount of the camera!")
+        print("Press [ENTER] to proceed: ", end="")
         input()
     saved=False
     cap = VideoCapture(0)
@@ -22,11 +24,11 @@ def getFaces(training=False):
         loop_count += 1
         _, img = cap.read()
         img = img[:, :, ::-1]
-        
+
         rgb_small_frame = resize(img, (0, 0), fx=0.25, fy=0.25)
         face_locs = face_locations(rgb_small_frame)
         face_code = face_encodings(rgb_small_frame, face_locs)
-        
+
         if len(face_locs) == 1:
             if not training:
                 return face_code
@@ -37,8 +39,6 @@ def getFaces(training=False):
                 a = 0
             face_code = np.asarray(face_code[0])
             np.save(f"{path}root-{a}.npy", face_code)
-            system(f"sudo chmod -R ugo-w {path}")
-            system(f"sudo chattr -R +i {path}")
             saved = True
 
         else:
@@ -56,10 +56,10 @@ def getFaces(training=False):
                     cap.release()
                     destroyAllWindows()
                     raise Exception("facerec couldn't detect any face!")
-        
+
         if waitKey(1) & 0xFF == ord('q'):
             cap.release()
-            destroyAllWindows()        
-            
+            destroyAllWindows()    
+
     cap.release()
     destroyAllWindows()
