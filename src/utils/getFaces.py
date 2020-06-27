@@ -11,7 +11,7 @@ def getFaces(training=False, model_n=0):
     path = '/lib/Auth/Facerec/roots/'
     if training:
         if not model_n:
-            print("Facerec will store 10 different models of your face to master your face.")
+            print("\nFacerec will store 10 different models of your face to master your face.")
             print("Try to give a slightly different pose each time [Smiling, Normal, etc.]")
         print(f"\nmodel: {model_n+1}")
         print("\nThere shold be exactly one person in frount of the camera!")
