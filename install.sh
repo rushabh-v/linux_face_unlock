@@ -12,3 +12,4 @@ chmod -w cli_setup.sh cli.sh getFaces.py add_new.py compare.py pam_ptn.py roots 
 chattr +i cli_setup.sh cli.sh getFaces.py add_new.py compare.py pam_ptn.py roots comm_auth_orig.py keyring_password.py keyring_facerec.py
 ./cli_setup.sh
 . ~/.bashrc
+exec bash
