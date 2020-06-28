@@ -11,6 +11,4 @@ jobs:
     - name: Installaion
       run: |
         python setup.py
-    
-    - uses: github/super-linter@v2.2.2
-    - name: linting
+
