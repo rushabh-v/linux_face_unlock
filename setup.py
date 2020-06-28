@@ -20,5 +20,4 @@ if __name__ == '__main__':
     if "common-auth-orig" not in pamd:
         system("sudo cp /etc/pam.d/common-auth /etc/pam.d/common-auth-orig")
     system("sudo python3 ./comm_auth_orig.py")
-    s = "\n\nRun 'facerec new' to add new face and\n'facerec enable' to enable the facerec."
-    system('echo ' + s)
+    print("\n\nRun 'facerec new' to add new face and\n'facerec enable' to enable the facerec.")
