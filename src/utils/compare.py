@@ -27,4 +27,4 @@ def authenticate():
         matches = distances < 0.35
         if matches.any():
             return True
-    raise Exception("facerec did not recognize and face! Please enter the password.")
+    raise Exception("facerec did not recognize any face! Please enter the password.")

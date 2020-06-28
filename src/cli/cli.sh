@@ -11,11 +11,10 @@ elif [ "$1" = "disable" ]; then
     sudo python3 /lib/Auth/Facerec/keyring_password.py
     sudo pam-auth-update --package
 elif [ "$1" = "remove" ]; then
+    sudo python3 /lib/Auth/Facerec/keyring_password.py
     sudo chattr -R -i /lib/Auth/
     sudo rm -r /lib/Auth
-    sudo rm /etc/pam.d/pam_python.so
     sudo rm /usr/share/pam-configs/Facerec
-    sudo python3 /lib/Auth/Facerec/keyring_password.py
     sudo pam-auth-update --package
 fi
 }
