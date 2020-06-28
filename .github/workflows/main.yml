@@ -7,11 +7,10 @@ jobs:
     runs-on: [ubuntu-18.04]
 
     steps:
+    - uses: actions/checkout@v1
     - name: Installaion
-      uses: actions/checkout@v1
       run: |
         python setup.py
     
+    - uses: github/super-linter@v2.2.2
     - name: linting
-      uses: github/super-linter@v2.2.2
-
