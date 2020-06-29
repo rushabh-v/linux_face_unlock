@@ -24,11 +24,11 @@ if __name__ == '__main__':
 
     from terminaltables import AsciiTable
 
-    title = 'CLI'
+    title = 'Command Line Interface'
     TABLE_DATA = (
     ('Command', 'Discription'),
     ('facerec new', 'To add a new root face'),
-    ('facerec enable', 'Enable facerec after adding a new face/or after a temporary disable.'),
+    ('facerec enable', 'Enable facerec after adding a new face/or after a disable.'),
     ('facerec disable', 'Temporarily disable facerec, preserving the full setup.'),
     ('facerec remove', 'Completely remove the facerec and the root faces.') 
     )
