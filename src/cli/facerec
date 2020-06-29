@@ -1,10 +1,10 @@
 
 # Autocomple for the facerec command on cli
 
-facerec_autocomplete()
+_facerec()
 {
     local options="new enable disable remove"
     local current_word="${COMP_WORDS[COMP_CWORD]}"
     COMPREPLY=($(compgen -W "${options}" -- "$current_word"))
 }
-complete -F facerec_autocomplete facerec
+complete -F _facerec facerec

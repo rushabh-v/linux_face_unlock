@@ -16,5 +16,6 @@ elif [ "$1" = "remove" ]; then
     sudo rm /usr/share/pam-configs/Facerec
     sudo rm /usr/share/bash-completion/completions/facerec
     sudo pam-auth-update --package
+    . ~/.bashrc
 fi
 }
