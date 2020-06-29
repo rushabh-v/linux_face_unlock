@@ -11,28 +11,33 @@ git clone https://github.com/rushabh-v/linux_face_unlock.git
 cd linux_face_unlock
 ```
 
-2. Make the `install.sh` file executable:
+
+2. Run the `setup.py` script:
 
 ```
-chmod +x install.sh
+python3 setup.py
 ```
 
-3. Run the `install.sh` script:
-
-```
-sudo ./install.sh
-```
-
-4. Add a new root face:
+3. Add a new root face:
 
 ```
 facerec new
 ```
      
-5. Enable the facerec:
+4. Enable the facerec:
 
 ```
 facerec enable
+```
+
+5. Temporarily disable facerec:
+```
+facerec disable
+```
+
+6. Completely remove the facerec and the root faces:
+```
+facerec remove
 ```
 
 ## Troubleshoot
@@ -40,7 +45,7 @@ facerec enable
 * If you don't have root access. Go to recovery mode as root and run,
 
 ```
-apt-get --reinstall install libpam-runtime libpam-modules
+facerec remove
 ```
 
 
