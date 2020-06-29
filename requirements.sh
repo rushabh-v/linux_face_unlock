@@ -1,5 +1,6 @@
 #!/bin/bash
 pip3 install terminaltables
+pip install terminaltables
 sudo -H pip3 install cmake
 pip3 install cmake
 sudo -H pip install execnet

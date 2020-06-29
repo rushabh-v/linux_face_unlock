@@ -10,5 +10,5 @@ jobs:
     - uses: actions/checkout@v1
     - name: Installaion
       run: |
-        python setup.py
+        python3 setup.py
 
