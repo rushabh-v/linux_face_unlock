@@ -19,5 +19,19 @@ if __name__ == '__main__':
     
     if "common-auth-orig" not in pamd:
         system("sudo cp /etc/pam.d/common-auth /etc/pam.d/common-auth-orig")
+
     system("sudo python3 ./comm_auth_orig.py")
-    print("\n\nRun 'facerec new' to add new face and\n'facerec enable' to enable the facerec.")
+
+    from terminaltables import AsciiTable
+
+    title = 'CLI'
+    TABLE_DATA = (
+    ('Command', 'Discription'),
+    ('facerec new', 'To add a new root face'),
+    ('facerec enable', 'Enable facerec after adding a new face/or after a temporary disable.'),
+    ('facerec disable', 'Temporarily disable facerec, preserving the full setup.'),
+    ('facerec remove', 'Completely remove the facerec and the root faces.') 
+    )
+
+    table_instance = AsciiTable(TABLE_DATA, title)
+    print(table_instance.table)

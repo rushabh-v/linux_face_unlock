@@ -14,7 +14,6 @@ def call_python_version(Version, Module, Function, ArgumentList):
 
 def pam_sm_authenticate(pamh, flags, args):
     print "facerec running.."
-    os.chdir("/lib/Auth/Facerec/")
     try:
         if call_python_version("3", "compare", "authenticate", []):
             return pamh.PAM_SUCCESS
@@ -26,7 +25,6 @@ def pam_sm_authenticate(pamh, flags, args):
 
 def pam_sm_open_session(pamh, flags, args):
     print "facerec running.."
-    os.chdir("/lib/Auth/Facerec/")
     try:
         if call_python_version("3", "compare", "authenticate", []):
             return pamh.PAM_SUCCESS

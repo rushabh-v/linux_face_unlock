@@ -4,14 +4,13 @@ if [ "$1" = "new" ]; then
     sudo python3 /lib/Auth/Facerec/add_new.py
 elif [ "$1" = "enable" ]; then
     sudo cp /lib/Auth/Facerec/Facerec /usr/share/pam-configs/
-    sudo python3 /lib/Auth/Facerec/keyring_facerec.py
     sudo pam-auth-update --package
 elif [ "$1" = "disable" ]; then
     sudo rm /usr/share/pam-configs/Facerec
-    sudo python3 /lib/Auth/Facerec/keyring_password.py
+    sudo python3 /lib/Auth/Facerec/remove_cli.py
     sudo pam-auth-update --package
 elif [ "$1" = "remove" ]; then
-    sudo python3 /lib/Auth/Facerec/keyring_password.py
+    sudo python3 /lib/Auth/Facerec/remove_cli.py
     sudo chattr -R -i /lib/Auth/
     sudo rm -r /lib/Auth
     sudo rm /usr/share/pam-configs/Facerec
