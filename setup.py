@@ -22,4 +22,4 @@ if __name__ == '__main__':
 
     system("sudo python3 ./comm_auth_orig.py")
     system("sudo python3 /lib/Auth/Facerec/cli_info.py")
-    system(". ~/.bashrc")
+    system("exec bash")
