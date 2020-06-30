@@ -7,15 +7,16 @@ if __name__ == '__main__':
     gk = "gnome_keyring.so"
     files = [join(path, f) for f in listdir(path) if isfile(join(path, f))]
     for file_path in files:
+        flag = False
         f = open(file_path, "r")
-        text = f.read()
-        if gk in text:
-            lines = f.readlines()
-            for i, line in enumerate(lines):
-                if gk in line and line[0]!='#':
-                    lines[i] = "# " + line
-            f = open(file_path, "w+")
+        lines = f.readlines()
+        for i, line in enumerate(lines):
+            if gk in line and line[0]!='#':
+                lines[i] = "# " + line
+                flag = True
+        f.close()
+
+        if flag:
+            f = open(file_path, "w")
             f.writelines(lines)
-            f.close()
-        else:
             f.close()
