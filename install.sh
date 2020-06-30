@@ -10,7 +10,7 @@ sudo cp ./src/cli/facerec /usr/share/bash-completion/completions/
 cp pam_python.so /lib/x86_64-linux-gnu/security/
 cd /lib/Auth/Facerec/
 chmod +x cli.sh cli_setup.sh
-chmod -w cli_setup.sh cli.sh getFaces.py add_new.py compare.py pam_ptn.py comm_auth_orig.py remove_cli.py  disable_keyring.py enable_keyring.py facerec Facerec roots
-chattr +i cli_setup.sh cli.sh getFaces.py add_new.py compare.py pam_ptn.py comm_auth_orig.py remove_cli.py  disable_keyring.py enable_keyring.py facerec Facerec roots
+chmod -w cli_setup.sh cli.sh getFaces.py add_new.py compare.py pam_ptn.py comm_auth_orig.py remove_cli.py  keyring_disable.py keyring_enable.py facerec Facerec roots
+chattr +i cli_setup.sh cli.sh getFaces.py add_new.py compare.py pam_ptn.py comm_auth_orig.py remove_cli.py  keyring_disable.py keyring_enable.py facerec Facerec roots
 ./cli_setup.sh
 . ~/.bashrc
