@@ -12,8 +12,7 @@ def getFaces(training=False, model_n=0):
     if training:
         if not model_n:
             print("\nFacerec will store 10 different models of your face to master your face.")
-            print("Try to give a slightly different pose each time [Smiling, Normal, etc.]")
-            print("And try to change the distance and the angle of your face from the camera by a little every time")
+            print("Try to give a slightly different pose and distance from the camera each time [Smiling, Normal, etc.].")
         print(f"\nmodel: {model_n+1}")
         print("\nThere shold be exactly one person in frount of the camera!")
         print("Press [ENTER] to proceed: ", end="")
