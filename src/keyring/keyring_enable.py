@@ -20,4 +20,3 @@ if __name__ == '__main__':
             f = open(file_path, "w")
             f.writelines(lines)
             f.close()
-
