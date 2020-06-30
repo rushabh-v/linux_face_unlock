@@ -17,5 +17,7 @@ elif [ "$1" = "remove" ]; then
     sudo rm /usr/share/bash-completion/completions/facerec
     sudo pam-auth-update --package
     . ~/.bashrc
+elif [ "$1" = "--help" ]; then
+    python3 /lib/Auth/Facerec/cli_info.py
 fi
 }

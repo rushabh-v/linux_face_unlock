@@ -1,10 +1,10 @@
-import os
+from os import chdir, getcwd
 
-import execnet
+from execnet import makegateway
 
 
 def call_python_version(Version, Module, Function, ArgumentList):
-    gw      = execnet.makegateway("popen//python=python%s" % Version)
+    gw      = makegateway("popen//python=python%s" % Version)
     channel = gw.remote_exec("""
         from %s import %s as the_function
         channel.send(the_function(*channel.receive()))
@@ -13,22 +13,29 @@ def call_python_version(Version, Module, Function, ArgumentList):
     return  channel.receive()
 
 def pam_sm_authenticate(pamh, flags, args):
+    cur = getcwd()
     print "facerec running.."
     try:
+        chdir("/lib/Auth/Facerec/")
         if call_python_version("3", "compare", "authenticate", []):
+            chdir(cur)
             return pamh.PAM_SUCCESS
         else:
+            chdir(cur)
             return pamh.PAM_SYSTEM_ERR
     except Exception as e:
         print(str(e))
 
-
 def pam_sm_open_session(pamh, flags, args):
+    cur = getcwd()
     print "facerec running.."
     try:
+        chdir("/lib/Auth/Facerec/")
         if call_python_version("3", "compare", "authenticate", []):
+            chdir(cur)
             return pamh.PAM_SUCCESS
         else:
+            chdir(cur)
             return pamh.PAM_SYSTEM_ERR
     except Exception as e:
         print(str(e))

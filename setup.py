@@ -21,7 +21,7 @@ if __name__ == '__main__':
         system("sudo cp /etc/pam.d/common-auth /etc/pam.d/common-auth-orig")
 
     system("sudo python3 ./comm_auth_orig.py")
-
+    system(". ~/.bashrc")
     from terminaltables import AsciiTable
 
     title = 'Command Line Interface'
