@@ -11,10 +11,12 @@ if __name__ == '__main__':
         try:
             getFaces.getFaces(training=True, model_n=i)
         except:
+            system(f"sudo chmod -R ugo-w {path}")
+            system(f"sudo chattr -R +i {path}")
             print("\nProcess ended before Completion due to an error!")
             print(f"{i} out of 10 models trained succesfully.")
-            break
-    
+            exit()
+
     system(f"sudo chmod -R ugo-w {path}")
     system(f"sudo chattr -R +i {path}")
-    print(f"\n10 out of 10 models trained succesfully.")
+    print(f"\n\n10 out of 10 models trained succesfully.")

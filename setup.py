@@ -21,5 +21,4 @@ if __name__ == '__main__':
         system("sudo cp /etc/pam.d/common-auth /etc/pam.d/common-auth-orig")
 
     system("sudo python3 ./comm_auth_orig.py")
-    system(". ~/.bashrc")
-    system("python3 /lib/Auth/Facerec/cli_info.py")
+    system("sudo python3 /lib/Auth/Facerec/cli_info.py")

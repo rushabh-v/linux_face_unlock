@@ -24,7 +24,7 @@ def authenticate():
 
     for code in face_codes:
         distances = np.array(face_distance(roots, code))
-        matches = distances < 0.35
+        matches = distances < 0.4
         if matches.any():
             return True
-    raise Exception("facerec did not recognize any face! Please enter the password.")
+    return False

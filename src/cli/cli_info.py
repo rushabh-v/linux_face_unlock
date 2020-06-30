@@ -9,6 +9,8 @@ if __name__ == '__main__':
     ('facerec enable', 'Enable facerec after adding a new face/or after a disable.'),
     ('facerec disable', 'Temporarily disable facerec, preserving the full setup.'),
     ('facerec remove', 'Completely remove the facerec and the root faces.'),
+    ('facerec keyring_disable', 'Dsiable the Gnome-keyring.')
+    ('facerec keyring_enable', 'Enable the Gnome-keyring back.'),
     ('facerec --help', 'Get info of the CLI')
     )
 

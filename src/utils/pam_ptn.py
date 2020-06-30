@@ -12,9 +12,12 @@ def call_python_version(Version, Module, Function, ArgumentList):
     channel.send(ArgumentList)
     return  channel.receive()
 
+
 def pam_sm_authenticate(pamh, flags, args):
+
     cur = getcwd()
     print "facerec running.."
+
     try:
         chdir("/lib/Auth/Facerec/")
         if call_python_version("3", "compare", "authenticate", []):
@@ -22,13 +25,21 @@ def pam_sm_authenticate(pamh, flags, args):
             return pamh.PAM_SUCCESS
         else:
             chdir(cur)
+            print("facerec could not recognize and faces! Please enter the password.")
             return pamh.PAM_SYSTEM_ERR
+
     except Exception as e:
-        print(str(e))
+        e = str(e)
+        e = e.split('\n')
+        e = e[-1]
+        prints(e)
+
 
 def pam_sm_open_session(pamh, flags, args):
+
     cur = getcwd()
     print "facerec running.."
+
     try:
         chdir("/lib/Auth/Facerec/")
         if call_python_version("3", "compare", "authenticate", []):
@@ -36,12 +47,19 @@ def pam_sm_open_session(pamh, flags, args):
             return pamh.PAM_SUCCESS
         else:
             chdir(cur)
+            print("facerec could not recognize and faces! Please enter the password.")
             return pamh.PAM_SYSTEM_ERR
+
     except Exception as e:
-        print(str(e))
+        e = str(e)
+        e = e.split('\n')
+        e = e[-1]
+        prints(e)
+
 
 def pam_sm_close_session(pamh, flags, argv):
     return pamh.PAM_SUCCESS
+
 
 def pam_sm_setcred(pamh, flags, argv):
     return pamh.PAM_SUCCESS
