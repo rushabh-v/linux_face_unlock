@@ -22,16 +22,4 @@ if __name__ == '__main__':
 
     system("sudo python3 ./comm_auth_orig.py")
     system(". ~/.bashrc")
-    from terminaltables import AsciiTable
-
-    title = 'Command Line Interface'
-    TABLE_DATA = (
-    ('Command', 'Discription'),
-    ('facerec new', 'To add a new root face'),
-    ('facerec enable', 'Enable facerec after adding a new face/or after a disable.'),
-    ('facerec disable', 'Temporarily disable facerec, preserving the full setup.'),
-    ('facerec remove', 'Completely remove the facerec and the root faces.') 
-    )
-
-    table_instance = AsciiTable(TABLE_DATA, title)
-    print(table_instance.table)
+    system("python3 /lib/Auth/Facerec/cli_info.py")
