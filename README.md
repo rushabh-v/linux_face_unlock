@@ -17,28 +17,17 @@ cd linux_face_unlock
 ```
 python3 setup.py
 ```
+# Command Line Interface
 
-3. Add a new root face:
+| Command | Discription |
+|---------|:------------|
+| facerec new | Add a new root face.|
+| facerec enable | Enable facerec back.|
+| facerec disable | Temporarily disable facerec, preserving the setup. |
+| facerec remove | Completely remove the facerec and the root faces.  |
+| facerec --help | Get info about the facere CLI |
 
-```
-facerec new
-```
-     
-4. Enable the facerec:
 
-```
-facerec enable
-```
-
-5. Temporarily disable facerec:
-```
-facerec disable
-```
-
-6. Completely remove the facerec and the root faces:
-```
-facerec remove
-```
 
 ## Troubleshoot
 
