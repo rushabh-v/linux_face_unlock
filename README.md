@@ -3,7 +3,7 @@
 
 A blog on How I built this project can be found [here](https://medium.com/analytics-vidhya/how-i-built-face-unlock-for-ubuntu-linux-a2b769d1fbc1).
 
-### Installation steps:
+## Installation:
 1. Clone the repository:
 
 ```
@@ -17,7 +17,7 @@ cd linux_face_unlock
 ```
 python3 setup.py
 ```
-# Command Line Interface
+## Command Line Interface
 
 | Command | Discription |
 |---------|:------------|
