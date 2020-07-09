@@ -3,7 +3,7 @@
 
 _facerec()
 {
-    local options="new enable disable remove --help keyring_disable keyring_enable"
+    local options="new enable disable remove --help"
     local current_word="${COMP_WORDS[COMP_CWORD]}"
     COMPREPLY=($(compgen -W "${options}" -- "$current_word"))
 }

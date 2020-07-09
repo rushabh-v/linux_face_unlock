@@ -2,7 +2,6 @@ from os import chdir, getcwd
 
 from execnet import makegateway
 
-
 def call_python_version(Version, Module, Function, ArgumentList):
     gw      = makegateway("popen//python=python%s" % Version)
     channel = gw.remote_exec("""
@@ -29,10 +28,7 @@ def pam_sm_authenticate(pamh, flags, args):
             return pamh.PAM_SYSTEM_ERR
 
     except Exception as e:
-        e = str(e)
-        e = e.split('\n')
-        e = e[-1]
-        prints(e)
+        print(str(e))
 
 
 def pam_sm_open_session(pamh, flags, args):
@@ -51,11 +47,7 @@ def pam_sm_open_session(pamh, flags, args):
             return pamh.PAM_SYSTEM_ERR
 
     except Exception as e:
-        e = str(e)
-        e = e.split('\n')
-        e = e[-1]
-        prints(e)
-
+        print(str(e))
 
 def pam_sm_close_session(pamh, flags, argv):
     return pamh.PAM_SUCCESS

@@ -1,0 +1,14 @@
+Source: facerec
+Section: devel
+Priority: optional
+Standards-Version: 3.9.7
+X-Python3-Version: >= 3.6
+Build-Depends: python, dh-python, dh-make, debhelper, fakeroot
+Maintainer: Rushabh Vasani <vasanirushabh24@gmail.com>
+
+Package: facerec
+Homepage: https://github.com/rushabh-v/linux_face_unlock
+Architecture: all
+Depends: ${devel:Depends}, python, python3, python-pip, python3-pip, python3-dev, python3-setuptools, cmake, libatlas-base-dev, build-essential
+Description: A face authentication system for Ubuntu Linux.
+

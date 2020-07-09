@@ -1,25 +1,33 @@
-from os import listdir, system
-from os.path import isfile, join
+import os
+from setuptools import setup, find_packages
 
-if __name__ == '__main__':
+here = os.path.abspath(os.path.dirname(__file__))
+CLASSIFIERS = [
+    'Intended Audience :: Ubuntu Users',
+    'Natural Language :: English',
+    'Operating System :: Ubuntu',
+    'Topic :: System :: Authentication',
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+]
 
-    system("sudo apt-get install python-pip")
-    system("sudo apt-get install python3-pip")
-    system("sudo apt-get install libatlas-base-dev")
-    system("sudo apt-get install build-essential")
+setup(
+    name='facerec',
+    version="2.0",
+    license='BSD',
+    url='http://github.com/rushabh-v/linux_face_unlock',
+    description="A face Authentication system for Ubuntu Linux.",
+    classifiers=CLASSIFIERS,
+    author="Rushabh Vasani",
+    author_email="vasanirushabh24@gmail.com",
+    packages=find_packages(),
+    include_package_data=True,
+    zip_safe=True,
+)
 
-    system("sudo chmod +x requirements.sh")
-    system("sudo chmod +x install.sh")
-
-    system("./requirements.sh")
-    system("sudo ./install.sh")
-
-    path = "/etc/pam.d/"
-    pamd = [f for f in listdir(path) if isfile(join(path, f))]
-
-    if "common-auth-orig" not in pamd:
-        system("sudo cp /etc/pam.d/common-auth /etc/pam.d/common-auth-orig")
-
-    system("sudo python3 ./comm_auth_orig.py")
-    system("sudo python3 /lib/Auth/Facerec/cli_info.py")
-    system("exec bash")

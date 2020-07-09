@@ -1,0 +1,7 @@
+./src/utils/.
+./src/cli/.
+./build.py
+./comm_auth_orig.py
+./Facerec
+./src/cli/facerec
+./pam_python.so

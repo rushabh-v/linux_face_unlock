@@ -1,23 +1,23 @@
-from os import listdir
-from os.path import isfile, join
 
-import numpy as np
-from face_recognition import face_distance
-
-import getFaces
-
+from getFaces import (face_distance,
+ getFaces,
+ isfile,
+ join,
+ listdir,
+ np,
+)
 
 def load_npy(file):
     return list(np.load(file))
 
 def authenticate():
-    
+
     path = '/lib/Auth/Facerec/roots/'
     roots = [(path+f) for f in listdir(path) if isfile(join(path, f))] 
     if not roots:
         return False
     roots = list(map(load_npy, roots))
-    face_codes = getFaces.getFaces()
+    face_codes = getFaces()
 
     if not face_codes:
         return False
