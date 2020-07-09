@@ -10,5 +10,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Installaion
       run: |
-        sudo python3 setup.py
+        dpkg-buildpackage -b
+        cd ..
+        sudo dpkg -i facerec_*.deb
 
