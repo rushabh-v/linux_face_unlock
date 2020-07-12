@@ -24,11 +24,11 @@ def pam_sm_authenticate(pamh, flags, args):
             return pamh.PAM_SUCCESS
         else:
             chdir(cur)
-            print("facerec could not recognize and faces! Please enter the password.")
+            print("facerec did not recognize you! Please enter the password!")
             return pamh.PAM_SYSTEM_ERR
 
     except Exception as e:
-        print(str(e))
+        print("An unexpected error occoured... Please enter the password!")
 
 
 def pam_sm_open_session(pamh, flags, args):
@@ -43,11 +43,11 @@ def pam_sm_open_session(pamh, flags, args):
             return pamh.PAM_SUCCESS
         else:
             chdir(cur)
-            print("facerec could not recognize and faces! Please enter the password.")
+            print("facerec did not recognize you! Please enter the password!")
             return pamh.PAM_SYSTEM_ERR
 
     except Exception as e:
-        print(str(e))
+        print("An unexpected error occoured... Please enter the password!")
 
 def pam_sm_close_session(pamh, flags, argv):
     return pamh.PAM_SUCCESS

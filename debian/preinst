@@ -4,6 +4,10 @@ mkdir /lib/Auth
 mkdir /lib/Auth/Facerec
 mkdir /lib/Auth/Facerec/roots
 
+sudo apt-get install cmake
+sudo apt-get install libatlas-base-dev
+sudo apt-get install build-essential
+
 sudo -H pip install execnet
 
 sudo -H pip3 --no-cache-dir install cmake wheel setuptools terminaltables opencv-python face_recognition
