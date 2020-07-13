@@ -9,6 +9,6 @@ Maintainer: Rushabh Vasani <vasanirushabh24@gmail.com>
 Package: facerec
 Homepage: https://github.com/rushabh-v/linux_face_unlock
 Architecture: all
-Depends: ${devel:Depends}, python, python3, python-pip, python3-pip, python3-dev, python3-setuptools, cmake, libatlas-base-dev, build-essential
+Depends: ${devel:Depends}, python, python3, python-pip, python3-pip, python3-dev, python3-setuptools, cmake
 Description: A face authentication system for Ubuntu Linux.
 
