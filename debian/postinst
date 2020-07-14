@@ -1,4 +1,10 @@
 #!/bin/bash
+
+# dependencies
+sudo -H pip install execnet
+sudo -H pip3 --no-cache-dir install cmake wheel setuptools terminaltables opencv-python face_recognition
+
+# setup
 cd /lib/Auth/Facerec/
 sudo python3 ./build.py
 chmod +x cli.sh cli_setup.sh
