@@ -2,6 +2,7 @@
 # Linux Face Unlock
 
 A blog on How I built this project can be found [here](https://medium.com/analytics-vidhya/how-i-built-face-unlock-for-ubuntu-linux-a2b769d1fbc1).
+
 The debian package is currently being worked on! Follow the steps to install master.
 ## Installation:
 1. Clone the repository:
