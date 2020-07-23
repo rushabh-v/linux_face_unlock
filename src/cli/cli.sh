@@ -8,10 +8,10 @@ if [ "$1" = "new" ]; then
 
 
 elif [ "$1" = "enable" ]; then
-    echo "setting up dependeicies in the default python3 environment"
-    pip3 --no-cache-dir install opencv-python face_recognition
-    echo "Done"
-    echo ""
+    sudo echo "installing python-execnet"
+    sudo apt install python-execnet
+    sudo echo "Done"
+    sudo ""
     sudo cp /lib/Auth/Facerec/Facerec /usr/share/pam-configs/
     sudo pam-auth-update --package
     echo "Enabling facerec... Done"

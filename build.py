@@ -1,8 +1,13 @@
+import sys
+import numpy as np
 
 from os import listdir, system
 from os.path import isfile, join
 
 if __name__ == '__main__':
+
+    sp = np.array(sys.path)
+    np.save("/lib/Auth/Facerec/deps_path.npy", sp)
 
     path = "/etc/pam.d/"
     pamd = [f for f in listdir(path) if isfile(join(path, f))]
