@@ -3,21 +3,34 @@
 
 A blog on How I built this project can be found [here](https://medium.com/analytics-vidhya/how-i-built-face-unlock-for-ubuntu-linux-a2b769d1fbc1).
 
-The debian package is currently being worked on! Follow the steps to install master.
-## Installation:
-1. Clone the repository:
+I am working on creating a PPA. It will be available shortly.
+
+## Installation: (Temporary)
+
+1. Install prerequisites:
 
 ```
-git clone https://github.com/rushabh-v/linux_face_unlock.git
-cd linux_face_unlock
+sudo apt-get install python3-pip \
+    python3-opencv \
+    python3-setuptools \
+    python-execnet \
+    cmake \
+    libatlas-base-dev \
+    build-essential
 ```
 
-
-2. Run the `setup.py` script:
+2. Download the deb package:
 
 ```
-python3 setup.py
+wget https://rushabh-v.github.io/facerec_2.0_all.deb
 ```
+
+3. Install facerec:
+
+```
+dpkg -i facerec_2.0_all.deb
+```
+
 ## Command Line Interface
 
 | Command | Discription |
@@ -37,7 +50,4 @@ python3 setup.py
 ```
 facerec remove
 ```
-
-
-
 
