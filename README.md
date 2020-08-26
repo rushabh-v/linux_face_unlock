@@ -1,11 +1,11 @@
 
-# Linux Face Unlock
+# Facerec - Linux Face Unlock
 
 A blog on How I built this project can be found [here](https://medium.com/analytics-vidhya/how-i-built-face-unlock-for-ubuntu-linux-a2b769d1fbc1).
 
 I am working on creating a PPA. It will be available shortly.
 
-## Installation: (Temporary)
+## Installation (Temporary)
 
 1. Install prerequisites:
 
