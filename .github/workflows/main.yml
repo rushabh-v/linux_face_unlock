@@ -11,6 +11,7 @@ jobs:
     - name: Installaion
       run: |
         sudo apt-get install dh-make debhelper python3-pip python3-opencv cmake libatlas-base-dev build-essential python-execnet
+        sudo -H pip3 install setuptools
         dpkg-buildpackage -b
         cd ..
         sudo dpkg -i facerec_*.deb
