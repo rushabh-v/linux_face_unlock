@@ -1,16 +1,18 @@
 import sys
 import numpy as np
 
-deps_path = np.load('lib/Auth/Facerec/deps_path.npy')
+deps_path = np.load('/lib/Auth/Facerec/deps_path.npy')
 sys.path = list(deps_path)
 
 from os import listdir, system
 from os.path import isfile, join
 
-
 from cv2 import VideoCapture, destroyAllWindows, imshow, resize, waitKey
 from face_recognition import face_encodings, face_locations, face_distance
 
+CRED = '\033[91m'
+CEND = '\033[0m'
+CSEL = '\33[7m'
 
 def getFaces(training=False, model_n=0):
 
@@ -21,7 +23,7 @@ def getFaces(training=False, model_n=0):
             print("Try to give a slightly different pose and distance from the camera each time [Smiling, Normal, etc.].")
         print(f"\nmodel: {model_n+1}")
         print("\nThere shold be exactly one person in frount of the camera!")
-        print("Press [ENTER] to proceed: ", end="")
+        print(CSEL + "Press [ENTER] to proceed: " + CEND, end="")
         input()
     saved=False
     cap = VideoCapture(0)
@@ -56,12 +58,12 @@ def getFaces(training=False, model_n=0):
                     return face_code
                 cap.release()
                 destroyAllWindows()
-                raise Exception("facerec found more than one faces!")
+                raise Exception(CRED + "facerec found more than one faces!" + CEND)
             else:
                 if loop_count > 200:
                     cap.release()
                     destroyAllWindows()
-                    raise Exception("facerec couldn't detect any face!")
+                    raise Exception(CRED + "facerec couldn't detect any face!" + CEND)
 
         if waitKey(1) & 0xFF == ord('q'):
             cap.release()

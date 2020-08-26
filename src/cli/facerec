@@ -1,5 +1,5 @@
 
-# Autocomple for the facerec command on cli
+# Autocomple for facerec CLI
 
 _facerec()
 {
