@@ -28,7 +28,7 @@ wget https://rushabh-v.github.io/facerec_2.0_all.deb
 3. Install facerec:
 
 ```
-dpkg -i facerec_2.0_all.deb
+sudo dpkg -i facerec_2.0_all.deb
 ```
 
 ## Command Line Interface
