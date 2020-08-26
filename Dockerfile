@@ -10,6 +10,7 @@ RUN apt update && apt install -y \
     cmake \
     libatlas-base-dev \
     build-essential \
+    python3-setuptools \
     python-execnet
 
 RUN apt install -y wget sudo nano
