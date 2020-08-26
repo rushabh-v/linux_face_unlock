@@ -2,7 +2,7 @@ import sys
 import numpy as np
 
 deps_path = np.load('/lib/Auth/Facerec/deps_path.npy')
-sys.path = list(deps_path)
+sys.path += list(deps_path)
 
 from os import listdir, system
 from os.path import isfile, join
