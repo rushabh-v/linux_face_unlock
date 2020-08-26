@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mkdir /lib/Auth
+mkdir /lib/Auth/Facerec
+mkdir /lib/Auth/Facerec/roots
+

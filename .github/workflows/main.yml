@@ -4,12 +4,18 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: [ubuntu-18.04]
 
     steps:
     - uses: actions/checkout@v1
-    - name: Installaion checks
+    - name: Installaion
       run: |
-        chmod +x install.sh
-        sudo ./install.sh
+        sudo apt-get install dh-make debhelper python3-pip python3-opencv python3-setuptools python-execnet cmake libatlas-base-dev build-essential
+        dpkg-buildpackage -b
+        cd ..
+        sudo dpkg -i facerec_*.deb
+
+    - name: Dependencies check
+      run: |
+        python3 /lib/Auth/Facerec/getFaces.py
+        python /lib/Auth/Facerec/pam_ptn.py

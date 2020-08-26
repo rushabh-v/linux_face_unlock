@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# dependencies
+sudo -H pip3 --no-cache-dir install face_recognition terminaltables
+
+# setup
+cd /lib/Auth/Facerec/
+sudo python3 ./build.py
+chmod +x cli.sh cli_setup.sh
+chmod -r -w ./
+chattr -R +i ./
+./cli_setup.sh
+source ~/.bashrc
+cd /
+bash
+
