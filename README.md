@@ -22,13 +22,13 @@ sudo apt-get install python3-pip \
 2. Download the deb package:
 
 ```
-wget https://rushabh-v.github.io/facerec_2.0_all.deb
+wget https://rushabh-v.github.io/facerec_1.0_all.deb
 ```
 
 3. Install facerec:
 
 ```
-sudo dpkg -i facerec_2.0_all.deb
+sudo dpkg -i facerec_1.0_all.deb
 ```
 
 ## Command Line Interface
