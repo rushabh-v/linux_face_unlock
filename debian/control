@@ -1,6 +1,6 @@
 Source: facerec
 Section: devel
-Priority: optional
+Priority: normal
 X-Python3-Version: >= 3.6
 Build-Depends: python, dh-python, dh-make, debhelper, fakeroot
 Maintainer: Rushabh Vasani <vasanirushabh24@gmail.com>
