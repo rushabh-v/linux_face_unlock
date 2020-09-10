@@ -1,4 +1,11 @@
-facerec (1.0) bionic; urgency=normal
+facerec (1.1) bionic; urgency=low
+
+  * remove bash.
+  * update docs.
+
+ -- Rushabh Vasani <vasanirushabh24@gmail.com>  Tue, 02 Jul 2020 14:47:24 -0400
+
+facerec (1.0) bionic; urgency=low
 
   * initial release.
 

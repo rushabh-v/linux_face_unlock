@@ -33,7 +33,7 @@ sudo dpkg -i facerec_1.0_all.deb
 
 ## Command Line Interface
 
-| Command | Discription |
+| Command | Description |
 |---------|:------------|
 | facerec new | Add a new root face.|
 | facerec enable | Enable facerec back.|

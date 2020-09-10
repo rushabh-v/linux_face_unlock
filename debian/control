@@ -1,8 +1,8 @@
 Source: facerec
 Section: devel
-Priority: normal
+Priority: optional
 X-Python3-Version: >= 3.6
-Build-Depends: python, dh-python, dh-make, debhelper, fakeroot
+Build-Depends: python, dh-python, dh-make, debhelper, fakeroot, python-setuptools
 Maintainer: Rushabh Vasani <vasanirushabh24@gmail.com>
 
 Package: facerec

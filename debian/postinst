@@ -11,6 +11,5 @@ chmod -r -w ./
 chattr -R +i ./
 ./cli_setup.sh
 source ~/.bashrc
-cd /
-bash
+cd ~
 
