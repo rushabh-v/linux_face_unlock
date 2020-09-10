@@ -1,46 +1,47 @@
 
 # Facerec - Linux Face Unlock
+Facerec is a face authentication system for Ubuntu Linux that works while logging in, running "sudo" commands, etc. with a user-friendly CLI to operate it.
 
-A blog on How I built this project can be found [here](https://medium.com/analytics-vidhya/how-i-built-face-unlock-for-ubuntu-linux-a2b769d1fbc1).
 
-I am working on creating a PPA. It will be available shortly.
+## Installation
 
-## Installation (Temporary)
-
-1. Install prerequisites:
-
+#### 1. Update Sources
 ```
-sudo apt-get install python3-pip \
-    python3-opencv \
-    python3-setuptools \
-    python-execnet \
-    cmake \
-    libatlas-base-dev \
-    build-essential
+sudo apt-get update
+```
+#### 2. add PPA to your machine
+```
+sudo add-apt-repository ppa:rushabh-v/facerec
 ```
 
-2. Download the deb package:
+#### 3. Install Facerec
+```
+sudo apt-get install facerec
+```
 
+#### 4. Update bash
 ```
-wget https://rushabh-v.github.io/facerec_1.0_all.deb
+bash
 ```
 
-3. Install facerec:
-
-```
-sudo dpkg -i facerec_1.0_all.deb
-```
 
 ## Command Line Interface
 
 | Command | Description |
 |---------|:------------|
-| facerec new | Add a new root face.|
-| facerec enable | Enable facerec back.|
-| facerec disable | Temporarily disable facerec, preserving the setup. |
-| facerec remove | Completely remove the facerec and the root faces.  |
-| facerec --help | Get info about the facere CLI |
+| facerec new | Add a new root face |
+| facerec enable | Enable facerec |
+| facerec disable | Temporarily disable facerec |
+| facerec remove | Completely remove the facerec  |
+| facerec --help | Get the CLI info |
 
+Try using the tab compeletions. This is one of the trivial features I am extra proud of :joy:
+
+
+## Contributions Welcome
+* Bug reports, Feature requests and PRs will be highly appreciated.
+* Dockerfile for the testing environment can be found [here](./Dockerfile). (Will soon upload the image to dockerhub)
+* Currently, facerec is only supported for Ubuntu. Adding support for other distros is on the list of major furture plans.
 
 
 ## Troubleshoot
@@ -50,4 +51,3 @@ sudo dpkg -i facerec_1.0_all.deb
 ```
 facerec remove
 ```
-
