@@ -7,7 +7,7 @@ Facerec is a face authentication system for Ubuntu Linux that works while loggin
 
 #### 1. Update Sources
 ```
-sudo apt-get update
+sudo apt update
 ```
 #### 2. add PPA to your machine
 ```
@@ -16,12 +16,12 @@ sudo add-apt-repository ppa:rushabh-v/facerec
 
 #### 3. Install Facerec
 ```
-sudo apt-get install facerec
+sudo apt install facerec
 ```
 
-#### 4. Update bash
+#### 4. Source bashrc
 ```
-bash
+source ~/.bashrc
 ```
 
 
