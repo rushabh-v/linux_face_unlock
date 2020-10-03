@@ -1,6 +1,10 @@
 name: CI
 
-on: [push]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   build:
@@ -14,8 +18,15 @@ jobs:
         dpkg-buildpackage -b
         cd ..
         sudo dpkg -i facerec_*.deb
+        source ~/.bashrc
 
-    - name: Dependencies check
+    - name: Check imports
       run: |
         python3 /lib/Auth/Facerec/getFaces.py
         python /lib/Auth/Facerec/pam_ptn.py
+
+    # - name: Test facerec --help
+    #   run: facerec --help
+
+    # - name: Test facerec --version
+    #   run: facerec --version
