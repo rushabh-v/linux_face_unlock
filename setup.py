@@ -19,10 +19,10 @@ CLASSIFIERS = [
 ]
 
 setup(
-    name='facerec',
+    name=config.NAME,
     version=config.__version__,
-    license='BSD',
-    url='http://github.com/rushabh-v/linux_face_unlock',
+    license=config.LICENSE,
+    url=config.GIT_URL,
     description="A face Authentication system for Ubuntu Linux.",
     classifiers=CLASSIFIERS,
     author="Rushabh Vasani",
