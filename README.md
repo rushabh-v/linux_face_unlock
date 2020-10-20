@@ -5,6 +5,8 @@ Facerec is a face authentication system for Ubuntu Linux that works while loggin
 
 ## Installation
 
+### Using PPA
+
 #### 1. Update Sources
 ```
 sudo apt update
@@ -23,6 +25,30 @@ sudo apt install facerec
 ```
 source ~/.bashrc
 ```
+
+### Using deb package
+
+#### 1. Download the deb package
+```
+wget https://github.com/rushabh-v/linux_face_unlock/releases/download/v1.1/facerec_1.1_all.deb
+```
+
+#### 2. Install all the dependencies
+```
+sudo apt install -y python3-pip python3-opencv python3-setuptools python-execnet cmake libatlas-base-dev build-essential
+```
+
+#### 3. Install the deb package using
+```
+sudo dpkg -i facerec_1.1_all.deb
+```
+
+#### 4. Source bashrc
+```
+source ~/.bashrc
+```
+
+NOTE: The deb package won't receive updates automatically. The PPA method is more preferable.
 
 
 ## Command Line Interface
