@@ -3,9 +3,18 @@ name: Lint Code Base
 on:
   push:
     branches: [ master ]
+    paths-ignore:
+      - README.md
+      - LICENSE
+      - .github/workflows/*
+      
   pull_request:
     branches: [ master ]
-
+    paths-ignore:
+      - README.md
+      - LICENSE
+      - .github/workflows/*
+      
 jobs:
   build:
     name: Lint Code Base
