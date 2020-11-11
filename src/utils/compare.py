@@ -1,4 +1,3 @@
-
 from getFaces import (face_distance,
  getFaces,
  isfile,
@@ -7,12 +6,14 @@ from getFaces import (face_distance,
  np,
 )
 
+import config
+
 def load_npy(file):
     return list(np.load(file))
 
 def authenticate():
 
-    path = '/lib/Auth/Facerec/roots/'
+    path = config.PATH + 'roots/'
     roots = [(path+f) for f in listdir(path) if isfile(join(path, f))] 
     if not roots:
         return False
@@ -28,4 +29,3 @@ def authenticate():
         if matches.any():
             return True
     return False
-
